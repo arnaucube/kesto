@@ -44,4 +44,21 @@ mod tests {
             "Fr(0x28410c403c92a9f18d1f27b22218b3649b3be8640dc160ad53bd21cf02f98d81)"
         );
     }
+
+    #[test]
+    fn test_usage_bytes() {
+        let msg = "hello";
+        let b: BigInt = BigInt::parse_bytes(msg.as_bytes(), 10).unwrap();
+        let v: Fr = Fr::from_str(&b.to_string()).unwrap();
+
+        let mut to_hash: Vec<Fr> = Vec::new();
+        to_hash.push(v);
+
+        let poseidon = Poseidon::new();
+        let h = poseidon.hash(to_hash).unwrap();
+        assert_eq!(
+            h.to_string(),
+            "Fr(0x28410c403c92a9f18d1f27b22218b3649b3be8640dc160ad53bd21cf02f98d81)"
+        );
+    }
 }
