@@ -1,0 +1,7 @@
+keystore:
+        path: keystore/path
+        address: 0xaddress
+        password: file:/password/path
+        keyjsonpath: key/json/path
+web3:
+        url: https://web3.url
