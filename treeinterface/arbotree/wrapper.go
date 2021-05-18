@@ -28,6 +28,7 @@ func (t *Tree) Init(name, storageDir string) error {
 	if err != nil {
 		return err
 	}
+	// storage := memory.NewMemoryStorage()
 
 	mt, err := arbo.NewTree(storage, 140, arbo.HashFunctionBlake2b) // TODO here the hash function would depend on the usage
 	if err != nil {
@@ -125,14 +126,21 @@ func (t *Tree) ImportDump(data []byte) error {
 }
 
 func (t *Tree) Size(root []byte) (int64, error) {
-	// TODO
-	return 0, nil
+	count := 0
+	err := t.Tree.Iterate(func(k, v []byte) {
+		if v[0] != arbo.PrefixValueLeaf {
+			return
+		}
+		count++
+	})
+	return int64(count), err
 }
 
 func (t *Tree) Snapshot(root []byte) (censustree.Tree, error) {
 	// TODO
 	return t, nil
 }
+
 func (t *Tree) HashExists(hash []byte) (bool, error) {
 	_, _, err := t.Tree.Get(hash)
 	if err != nil {

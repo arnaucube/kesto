@@ -105,6 +105,8 @@ github.com/arnaucube/arbo v0.0.0-20210508132613-cb373f881c7c h1:H1EVaXwUfqOlGvzn
 github.com/arnaucube/arbo v0.0.0-20210508132613-cb373f881c7c/go.mod h1:ZlejgAnqIb9ysj5z9Husdqant+3arJbac8CBStess/s=
 github.com/arnaucube/arbo v0.0.0-20210508150807-6dcbbdf4a51a h1:gBPYofXmm/ehWn071mLbjZKv6N6Zhl4huWHfZE1gZhA=
 github.com/arnaucube/arbo v0.0.0-20210508150807-6dcbbdf4a51a/go.mod h1:ZlejgAnqIb9ysj5z9Husdqant+3arJbac8CBStess/s=
+github.com/arnaucube/arbo v0.0.0-20210518085706-03bb9f744792 h1:0lwF3FXiztk0Dh6wpdjYGczOtG5HAB8reIgeuHBuuqo=
+github.com/arnaucube/arbo v0.0.0-20210518085706-03bb9f744792/go.mod h1:ZlejgAnqIb9ysj5z9Husdqant+3arJbac8CBStess/s=
 github.com/arnaucube/go-blindsecp256k1 v0.0.0-20210203222605-876755a714c3/go.mod h1:10oM1DQMpukFfSzNsjSQG2rE6UjoGsXT4iIxWIiVbu0=
 github.com/aryann/difflib v0.0.0-20170710044230-e206f873d14a/go.mod h1:DAHtR1m6lCRdSC2Tm3DSWRPvIPr6xNKyeHdqDQSQT+A=
 github.com/aws/aws-lambda-go v1.13.3/go.mod h1:4UKl9IzQMoD+QF79YdCuzCwp8VbmG4VAQwij/eHl5CU=
