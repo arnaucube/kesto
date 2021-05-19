@@ -12,7 +12,7 @@ import (
 	"time"
 
 	"github.com/arnaucube/arbo"
-	"github.com/iden3/go-merkletree/db/pebble"
+	"github.com/iden3/go-merkletree/db/leveldb"
 	"go.vocdoni.io/dvote/censustree"
 )
 
@@ -24,11 +24,10 @@ type Tree struct {
 
 func (t *Tree) Init(name, storageDir string) error {
 	dbDir := filepath.Join(storageDir, "arbotree.db."+strings.TrimSpace(name))
-	storage, err := pebble.NewPebbleStorage(dbDir, false) // TODO TMP
+	storage, err := leveldb.NewLevelDbStorage(dbDir, false) // TODO TMP
 	if err != nil {
 		return err
 	}
-	// storage := memory.NewMemoryStorage()
 
 	mt, err := arbo.NewTree(storage, 140, arbo.HashFunctionBlake2b) // TODO here the hash function would depend on the usage
 	if err != nil {
